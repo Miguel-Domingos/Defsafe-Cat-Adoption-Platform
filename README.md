@@ -11,8 +11,8 @@ The "Defsafe Cat Adoption" platform was created to facilitate the adoption of ca
 
 ## Project Structure:
 
-- [Admin Panel](./Defsafe-Cat-Adoption-Admin/): A restricted area where administrators manage cat profiles.
-- [Public Frontend](./Defsafe-Cat-Adoption/): A page where users can view available cats and submit adoption requests.
+- [Admin Panel](./Cat-Adoption-Admin/): A restricted area where administrators manage cat profiles.
+- [Public Frontend](./Cat-Adoption-Public/): A page where users can view available cats and submit adoption requests.
 
 ## Features:
 
