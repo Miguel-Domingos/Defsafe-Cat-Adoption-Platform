@@ -1,0 +1,29 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider  = "postgresql"
+  url       = env("DATABASE_URL")
+  directUrl = env("DIRECT_URL")
+}
+
+model Cat {
+  id          Int     @id @default(autoincrement())
+  image       String
+  name        String
+  description String
+  isAdopted   Boolean @default(false)
+  Adopt       Adopt[]
+}
+
+model Adopt {
+  id        Int     @id @default(autoincrement())
+  fullname  String
+  email     String
+  telephone String
+  reason    String
+  catID     Int
+  actived   Boolean @default(true)
+  Cat       Cat     @relation(fields: [catID], references: [id])
+}
