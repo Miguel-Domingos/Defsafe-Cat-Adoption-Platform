@@ -21,7 +21,6 @@ async function fetchCats() {
     });
   }
 
-  console.log(response);
   loading.value = false;
 }
 

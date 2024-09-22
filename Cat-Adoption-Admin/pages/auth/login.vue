@@ -12,8 +12,8 @@ const loginError = ref("");
 const loading = ref(false);
 const validationErrors = ref<z.ZodFormattedError<AuthSchemaTypes> | null>(null);
 const credentials = reactive({
-  email: "def@safe.com",
-  password: "123456789",
+  email: "",
+  password: "",
 });
 
 async function onLogin() {
