@@ -97,29 +97,41 @@ watch(data, () => {
         <label for="email" class="text-sm font-semibold text-brand-main"
           >Image</label
         >
-        <IconField>
-          <InputText
-            id="name"
-            class="w-full"
-            placeholder="Enter the cat's name"
-            v-model="data.image"
-            aria-describedby="image-help"
-          />
-          <InputIcon class="cursor-pointer" @click="fileButtonRef?.click()">
-            <input
-              type="file"
-              ref="fileButtonRef"
-              class="hidden"
-              @change="onFileUpload($event)"
+        <div class="flex items-center w-full gap-2">
+          <div
+            class="flex items-center justify-center w-full h-12 overflow-hidden rounded-full max-w-12 bg-brand-stroke"
+          >
+            <img
+              v-if="data.image"
+              :src="data.image"
+              class="object-cover w-full h-full"
             />
-            <Icon
-              class="-mt-[6px] text-3xl bg-brand-main"
-              name="ph:camera-fill"
+            <span v-else class="font-semibold text-brand-primary">
+              {{ data.name[0] }}
+            </span>
+          </div>
+          <IconField class="w-full">
+            <InputText
+              id="name"
+              class="w-full"
+              placeholder="Enter the cat's name"
+              v-model="data.image"
+              aria-describedby="image-help"
             />
-          </InputIcon>
-        </IconField>
-
-        <small id="image-help" class="text-brand-danger"></small>
+            <InputIcon class="cursor-pointer" @click="fileButtonRef?.click()">
+              <input
+                type="file"
+                ref="fileButtonRef"
+                class="hidden"
+                @change="onFileUpload($event)"
+              />
+              <Icon
+                class="-mt-[6px] text-3xl bg-brand-main"
+                name="ph:camera-fill"
+              />
+            </InputIcon>
+          </IconField>
+        </div>
       </div>
 
       <div class="flex flex-col w-full gap-2">

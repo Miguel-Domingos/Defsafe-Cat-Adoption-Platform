@@ -10,7 +10,7 @@ const emit = defineEmits(["approve"]);
 
 const loading = ref(false);
 
-async function onDelete() {
+async function onApprove() {
   loading.value = true;
 
   const response = await $fetch(`/api/adopt/${props.application.id}`, {
@@ -64,7 +64,7 @@ async function onDelete() {
         @click="modalRef?.closeModal()"
       />
       <Button
-        @click="async () => await onDelete()"
+        @click="async () => await onApprove()"
         class="w-full"
         label="Approve"
         :loading="loading"
