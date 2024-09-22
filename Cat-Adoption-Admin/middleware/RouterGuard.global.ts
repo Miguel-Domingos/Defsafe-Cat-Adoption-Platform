@@ -6,8 +6,10 @@ export default defineNuxtRouteMiddleware((to, from) => {
     return navigateTo("/");
   } else if (
     (user.id == "" || token.access_token == "") &&
-    to.name == "index"
+    (to.name == "app" || to.name == "app-request")
   ) {
     return navigateTo("/login");
   }
+
+  console.log(to.name);
 });
